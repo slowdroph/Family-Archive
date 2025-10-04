@@ -1,0 +1,29 @@
+.button {
+    display: inline-block;
+    padding: 1.2rem 3.2rem 1.2rem 3.2rem;
+    border-radius: 1.2rem;
+    font-weight: 700;
+    text-decoration: none;
+    transition: all 0.2s ease-in-out;
+    font-size: 1.6rem;
+    font-family: "Plus Jakarta Sans", sans-serif;
+}
+
+.primary {
+    background-color: var(--primary-color); 
+    color: white;
+}
+
+.primary:hover {
+    background-color: var(--background-darker);
+}
+
+.secondary {
+    background-color: var(--text-dark); 
+    color: #374151;
+}
+
+.secondary:hover {
+    background-color: var(--text-light);
+    color: white;
+}

@@ -53,5 +53,5 @@
 }
 
 .signup:hover {
-    background-color: #f59e0b;
+    background-color: var(--background-darker);
 }
