@@ -99,6 +99,39 @@ function Homepage() {
                     </div>
                 </div>
             </section>
+
+            <section className={styles.section_aside}>
+                <div className={styles.aside_box}>
+                    <div className={styles.image_container}>
+                        <img src="/images/family_album_01.jpg" alt="family viewing old photos" />
+                    </div>
+
+                    <div className={styles.aside_container}>
+                        <h2>preserve you family's legacy</h2>
+                        <p className={styles.aside_desc}>
+                            Digital photos are fragile. Hard drives fail, phones
+                            get lost. Our service ensures your family's memories
+                            are not just stored, but preserved for generations
+                            to come.
+                        </p>
+                        <p className={styles.paragraph_desc}>
+                            ✔️ Create a digital time capsule of your family's
+                            history.
+                        </p>
+                        <p className={styles.paragraph_desc}>
+                            ✔️ Collaborate with family members to build a
+                            complete collection.
+                        </p>
+                        <p className={styles.paragraph_desc}>
+                            ✔️ Pass down your albums to future generations.
+                        </p>
+                    </div>
+                </div>
+            </section>
+
+            <footer className={styles.footer}>
+                <p>&copy; {new Date().getUTCFullYear()} Family Archive. All rights reserved.</p>
+            </footer>
         </>
     );
 }
