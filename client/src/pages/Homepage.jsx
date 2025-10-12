@@ -1,4 +1,4 @@
-import Button from "../components/Button";
+import { Link } from "react-router";
 import Navbar from "../components/Navbar";
 import styles from "./../styles/pages/Homepage.module.css";
 
@@ -15,10 +15,19 @@ function Homepage() {
                         running out of space again.
                     </p>
                     <div className={styles.actions}>
-                        <Button href="#">Sign Up for Free</Button>
-                        <Button href="#" variant="secondary">
+                        <Link
+                            className={`${styles.button} ${styles.primary}`}
+                            to="register"
+                        >
+                            Sign Up for Free
+                        </Link>
+                        <Link
+                            className={`${styles.button} ${styles.secondary}`}
+                            to="albumpage"
+                            variant="secondary"
+                        >
                             Explore Family Albums
-                        </Button>
+                        </Link>
                     </div>
                 </div>
             </header>
@@ -103,11 +112,14 @@ function Homepage() {
             <section className={styles.section_aside}>
                 <div className={styles.aside_box}>
                     <div className={styles.image_container}>
-                        <img src="/images/family_album_01.jpg" alt="family viewing old photos" />
+                        <img
+                            src="/images/family_album_01.jpg"
+                            alt="family viewing old photos"
+                        />
                     </div>
 
                     <div className={styles.aside_container}>
-                        <h2>preserve you family's legacy</h2>
+                        <h2>preserve your family's legacy</h2>
                         <p className={styles.aside_desc}>
                             Digital photos are fragile. Hard drives fail, phones
                             get lost. Our service ensures your family's memories
@@ -130,7 +142,10 @@ function Homepage() {
             </section>
 
             <footer className={styles.footer}>
-                <p>&copy; {new Date().getUTCFullYear()} Family Archive. All rights reserved.</p>
+                <p>
+                    &copy; {new Date().getUTCFullYear()} Family Archive. All
+                    rights reserved.
+                </p>
             </footer>
         </>
     );

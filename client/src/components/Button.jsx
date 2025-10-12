@@ -1,10 +1,10 @@
-import styles from "./../styles/Button.module.css"
+import styles from "./../styles/Button.module.css";
 
-function Button({ children, variant = "primary", href }) {
+function Button({ children }) {
     return (
-        <a href={href} className={`${styles.button} ${styles[variant]}`}>
+        <button type="submit" className={styles.submitButton}>
             {children}
-        </a>
+        </button>
     );
 }
 

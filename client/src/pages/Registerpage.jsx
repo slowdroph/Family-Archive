@@ -1,6 +1,8 @@
 import { useState } from "react";
 import styles from "./../styles/pages/Registerpage.module.css";
 import { Link } from "react-router";
+import Button from "../components/Button";
+import Logo from "../components/Logo";
 
 function Registerpage() {
     const [formData, setFormData] = useState({
@@ -38,7 +40,7 @@ function Registerpage() {
 
                 <div className={styles.form_box}>
                     <div className={styles.return_box}>
-                        <Link to="/">🖼️ family archive</Link>
+                        <Logo size="2.8rem" />
                         <p>create an account and start storing your photos.</p>
                     </div>
                     <form className={styles.form} onSubmit={handleSubmit}>
@@ -90,9 +92,14 @@ function Registerpage() {
 
                         {error && <p className={styles.error}>{error}</p>}
 
-                        <button type="submit" className={styles.submitButton}>
-                            Register
-                        </button>
+                        <Button>Register</Button>
+
+                        <p className={styles.switchForm}>
+                            Already have an account?{" "}
+                            <Link to="/login" className={styles.switchLink}>
+                                Log in here.
+                            </Link>
+                        </p>
                     </form>
                 </div>
             </div>
