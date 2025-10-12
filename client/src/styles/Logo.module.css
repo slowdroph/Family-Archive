@@ -1,0 +1,6 @@
+.logo {
+    text-decoration: none;
+    text-transform: capitalize;
+    color: black;
+    font-family: var(--font-primary);
+}

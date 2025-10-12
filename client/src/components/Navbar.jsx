@@ -1,3 +1,4 @@
+import { Link } from "react-router";
 import styles from "./../styles/Navbar.module.css";
 
 function Navbar() {
@@ -11,15 +12,15 @@ function Navbar() {
 
             <ul className={styles.links}>
                 <li>
-                    <a href="#">Explore Albums</a>
+                    <Link to="albumpage">Explore Albums</Link>
                 </li>
                 <li>
-                    <a href="#">Login</a>
+                    <Link to="login">Login</Link>
                 </li>
                 <li>
-                    <a href="#" className={styles.signup}>
+                    <Link className={styles.signup} to="register">
                         Sign up
-                    </a>
+                    </Link>
                 </li>
             </ul>
         </nav>

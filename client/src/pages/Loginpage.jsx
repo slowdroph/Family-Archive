@@ -1,6 +1,8 @@
 import { useState } from "react";
 import styles from "./../styles/pages/Loginpage.module.css";
 import { Link } from "react-router";
+import Button from "../components/Button";
+import Logo from "../components/Logo";
 
 function Loginpage() {
     const [formData, setFormData] = useState({
@@ -33,12 +35,12 @@ function Loginpage() {
         <section className={styles.register_section}>
             <div className={styles.register_box}>
                 <div className={styles.intro_box}>
-                    <h1>Connecting your ife's best moments</h1>
+                    <h1>Connecting your Life's best moments</h1>
                 </div>
 
                 <div className={styles.form_box}>
                     <div className={styles.return_box}>
-                        <Link to="/">🖼️ family archive</Link>
+                        <Logo size="2.8rem" />
                         <p>
                             Sign into your account below to start using Family
                             Archive.
@@ -69,9 +71,14 @@ function Loginpage() {
 
                         {error && <p className={styles.error}>{error}</p>}
 
-                        <button type="submit" className={styles.submitButton}>
-                            Login
-                        </button>
+                        <Button>Login</Button>
+
+                        <p className={styles.switchForm}>
+                            Don't have an account?{" "}
+                            <Link to="/register" className={styles.switchLink}>
+                                Register here.
+                            </Link>
+                        </p>
                     </form>
                 </div>
             </div>
