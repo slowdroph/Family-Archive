@@ -4,6 +4,7 @@ import Registerpage from "./pages/Registerpage";
 import Loginpage from "./pages/Loginpage";
 import Albumhomepage from "./pages/Albumhomepage";
 import Albumdetailpage from "./pages/Albumdetailpage";
+import AddPhotosPage from "./pages/AddPhotosPage";
 
 function App() {
     return (
@@ -14,6 +15,7 @@ function App() {
                 <Route path="login" element={<Loginpage />} />
                 <Route path="albumpage" element={<Albumhomepage />} />
                 <Route path="album/:id" element={<Albumdetailpage />} />
+                <Route path="album/:id/add" element={<AddPhotosPage />} />
             </Routes>
         </BrowserRouter>
     );

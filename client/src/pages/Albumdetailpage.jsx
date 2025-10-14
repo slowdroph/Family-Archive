@@ -1,6 +1,7 @@
 import { useState } from "react";
 import UserNavbar from "../components/UserNavbar";
 import styles from "./../styles/pages/Albumdetailpage.module.css";
+import { Link } from "react-router";
 
 function Albumdetailpage() {
     // dados mockados temporários
@@ -32,9 +33,18 @@ function Albumdetailpage() {
             </header>
 
             <main className={styles.album_detail_section}>
-                <div className={styles.album_header}>
-                    <h1>{album.title}</h1>
-                    <p>{album.description}</p>
+                <div className={styles.album_header_box}>
+                    <div className={styles.album_header}>
+                        <h1>{album.title}</h1>
+                        <p>{album.description}</p>
+                    </div>
+
+                    <Link
+                        className={styles.photo_link}
+                        to={`/album/1/add`}
+                    >
+                        + add a photo
+                    </Link>
                 </div>
 
                 <div className={styles.gallery_grid}>
