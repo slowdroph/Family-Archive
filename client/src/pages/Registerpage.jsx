@@ -3,7 +3,7 @@ import styles from "./../styles/pages/Registerpage.module.css";
 import { Link } from "react-router";
 import Button from "../components/Button";
 import Logo from "../components/Logo";
-
+import axios from "axios";
 function Registerpage() {
     const [formData, setFormData] = useState({
         username: "",
@@ -13,22 +13,47 @@ function Registerpage() {
     });
 
     const [error, setError] = useState("");
+    const [success, setSuccess] = useState("");
 
     function handleChange(e) {
         const { name, value } = e.target;
         setFormData((prev) => ({ ...prev, [name]: value }));
     }
 
-    function handleSubmit(e) {
+    async function handleSubmit(e) {
         e.preventDefault();
 
         if (formData.password !== formData.confirmPassword) {
             setError("Passwords do not match.");
+            setSuccess("");
             return;
         }
 
         setError("");
-        console.log("Form data:", formData);
+        setSuccess("");
+
+        try {
+            // Envia os dados para o backend
+            const response = await axios.post("http://localhost:3001/register", {
+                name: formData.username, // O backend espera "name"
+                email: formData.email,
+                password: formData.password,
+            });
+
+            setSuccess(response.data.message);
+            setFormData({
+                username: "",
+                email: "",
+                password: "",
+                confirmPassword: "",
+            });
+        } catch (err) {
+            setError(
+                err.response?.data?.message ||
+                "Erro ao registrar. Tente novamente."
+            );
+            setSuccess("");
+        }
     }
 
     return (
@@ -91,6 +116,7 @@ function Registerpage() {
                         />
 
                         {error && <p className={styles.error}>{error}</p>}
+                        {success && <p className={styles.success}>{success}</p>}
 
                         <Button>Register</Button>
 
@@ -106,5 +132,4 @@ function Registerpage() {
         </section>
     );
 }
-
 export default Registerpage;
