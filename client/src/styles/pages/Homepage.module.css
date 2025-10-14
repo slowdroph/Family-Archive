@@ -1,0 +1,226 @@
+.header {
+    position: relative;
+    min-height: 100vh;
+    display: flex;
+    flex-direction: column;
+    background: url("/images/family_01.jpg") center/cover no-repeat;
+    background-color: rgba(143, 233, 25, 0.295);
+    background-blend-mode: darken;
+    overflow: hidden;
+    z-index: 0;
+}
+
+.header::before {
+    content: "";
+    position: absolute;
+    inset: 0;
+    backdrop-filter: blur(0.2rem);
+    -webkit-backdrop-filter: blur(0.2rem);
+    z-index: -1;
+    background: linear-gradient(rgba(0, 0, 0, 0.5), rgba(0, 0, 0, 0.5));
+}
+
+.hero {
+    position: relative;
+    z-index: 1;
+    flex: 1;
+    display: flex;
+    gap: 4rem;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    text-align: center;
+    color: white;
+    max-width: 80rem;
+    margin: 0 auto;
+    padding: 2rem;
+    font-family: var(--font-primary);
+}
+
+.hero h1 {
+    font-size: 6rem;
+    font-weight: 700;
+    margin-bottom: 1rem;
+    text-shadow: 0 2px 6px rgba(0, 0, 0, 0.6);
+}
+
+.hero p {
+    font-size: 1.8rem;
+    color: var(--text-dark);
+    margin-bottom: 2rem;
+    text-shadow: 0 2px 6px rgba(0, 0, 0, 0.6);
+}
+
+.actions {
+    display: flex;
+    gap: 1.6rem;
+    justify-content: center;
+}
+
+.button {
+    display: inline-block;
+    padding: 1.2rem 3.2rem 1.2rem 3.2rem;
+    border-radius: 1.2rem;
+    font-weight: 700;
+    text-decoration: none;
+    transition: all 0.2s ease-in-out;
+    font-size: 1.6rem;
+    font-family: "Plus Jakarta Sans", sans-serif;
+}
+
+.primary {
+    background-color: var(--primary-color); 
+    color: white;
+}
+
+.primary:hover {
+    background-color: var(--background-darker);
+}
+
+.secondary {
+    background-color: var(--text-dark); 
+    color: #374151;
+}
+
+.secondary:hover {
+    background-color: var(--text-light);
+    color: white;
+}
+
+
+/* services section */
+
+.section_services {
+    min-height: fit-content;
+    padding-top: 9rem;
+    font-family: var(--font-primary);
+}
+
+.heading_container {
+    display: flex;
+    align-items: center;
+    flex-direction: column;
+    gap: 1.3rem;
+    text-align: center;
+}
+
+.heading_container h2 {
+    font-size: 3.6rem;
+    color: var(--text-light);
+    text-transform: capitalize;
+    font-weight: 700;
+}
+
+.heading_container p {
+    font-size: 1.8rem;
+    color: var(--background-dark);
+    max-width: 67.2rem;
+    line-height: 2.8rem;
+}
+
+.services_box {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-wrap: wrap;
+    margin-top: 4.8rem;
+    gap: 3.2rem;
+}
+
+.services_container {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    max-width: 47rem;
+    text-align: center;
+}
+
+.services_container span {
+    width: 34px;
+    height: 34px;
+    color: var(--primary-color);
+}
+
+.services_container h3 {
+    font-size: 2rem;
+    text-transform: capitalize;
+    font-weight: 700;
+    color: var(--text-light);
+    margin-top: 2rem;
+}
+
+.services_container p {
+    font-size: 1.6rem;
+    margin-top: 0.8rem;
+    color: var(--background-dark);
+}
+
+/* aside section */
+
+.section_aside {
+    background-color: var(--background-light);
+    min-height: 900px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    margin-top: 10rem;
+    font-family: var(--font-primary);
+}
+
+.aside_box {
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    gap: 3rem;
+}
+
+.image_container {
+    width: 70.4rem;
+    height: 70.4rem;
+}
+
+.image_container img {
+    width: 100%;
+    height: 100%;
+    border-radius: 1.5rem;
+}
+
+.aside_container {
+    display: flex;
+    flex-direction: column;
+    width: 70.4rem;
+}
+
+.aside_container h2 {
+    font-size: 3.6rem;
+    text-transform: capitalize;
+    color: var(--text-light);
+}
+
+.aside_desc {
+    font-size: 1.8rem;
+    color: var(--background-dark);
+    margin-top: 3rem;
+}
+
+.paragraph_desc {
+    font-size: 1.6rem;
+    color: var(--background-dark);
+    margin-top: 2rem;
+}
+
+.footer{
+    background-color: white;
+    padding: 4rem 0rem;
+    font-family: var(--font-primary);
+    color: var(--background-dark);
+    border-top-width: 0.1rem;
+    border-top-style: solid;
+    border-top-color: var(--primary-color);
+}
+
+.footer p {
+    text-align: center;
+    font-size: 1.4rem;
+    
+}

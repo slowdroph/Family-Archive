@@ -1,0 +1,101 @@
+.register_section {
+    height: 100vh;
+    font-family: var(--font-primary);
+}
+
+.register_box {
+    display: flex;
+    flex-direction: row;
+    height: 100%;
+}
+
+.intro_box {
+    width: 45vw;
+    background-image: url(/images/family_03.jpg);
+    background-position: center;
+    background-size: cover;
+    background-color: rgba(0, 0, 0, 0.247);
+    background-blend-mode: darken;
+    opacity: 0.9;
+}
+
+.intro_box h1 {
+    color: white;
+    font-size: 6rem;
+    margin-top: 10rem;
+    margin-left: 10rem;
+    width: 58rem;
+}
+
+.form_box {
+    display: flex;
+    justify-content: center;
+    max-width: 100%;
+    margin-left: 10rem;
+    flex-direction: column;
+}
+
+.return_box {
+    transform: translateY(-10rem);
+}
+
+.return_box p {
+    margin-top: 1rem;
+    font-size: 1.7rem;
+    color: var(--background-dark);
+}
+
+.form {
+    display: flex;
+    flex-direction: column;
+    gap: 1.7rem;
+    width: 52rem;
+}
+
+label {
+    font-weight: 600;
+    color: #333;
+    font-size: 1.5rem;
+}
+
+input {
+    padding-left: 2rem;
+    height: 5rem;
+    border: none;
+    border-radius: 0.6rem;
+    font-size: 1.3rem;
+    background-color: #ebebeb;
+    width: 100%;
+    transition: 0.3s ease-in-out;
+}
+
+input:focus {
+    border-color: #22c55e;
+    border-style: solid;
+    border-width: 0.1rem;
+    outline: none;
+}
+
+.error {
+    color: #ef4444;
+    font-size: 1.3rem;
+}
+
+.switchForm {
+    text-align: center;
+    margin-top: 1.5rem;
+    font-size: 1.4rem;
+    color: #444;
+}
+
+.switchLink {
+    color: #22c55e;
+    font-weight: 600;
+    text-decoration: none;
+    transition: color 0.2s ease;
+}
+
+.switchLink:hover {
+    color: #16a34a;
+    text-decoration: underline;
+}
