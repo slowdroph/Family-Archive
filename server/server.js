@@ -76,6 +76,18 @@ app.post("/login", (req, res) => {
     });
 });
 
+// Listar todos os usuários
+app.get("/users", (req, res) => {
+    const sql = "SELECT id, name, email FROM users";
+    db.query(sql, (err, results) => {
+        if (err) {
+            return res.status(500).json({ message: "Erro ao buscar usuários." });
+        }
+        res.json(results);
+    });
+});
+
+
 // Criar um novo álbum
 app.post("/albums", (req, res) => {
     const { user_id, title, description } = req.body;
