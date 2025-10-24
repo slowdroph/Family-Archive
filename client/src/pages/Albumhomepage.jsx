@@ -3,24 +3,22 @@ import { Link } from "react-router";
 import UserNavbar from "../components/UserNavbar";
 import AlbumCreateModal from "../components/AlbumCreateModal";
 import styles from "./../styles/pages/Albumhomepage.module.css";
-import { useQuery } from "@tanstack/react-query";
-import { getUserAlmbums } from "../utils/apiUserAlbums";
+import { useQueryClient } from "@tanstack/react-query";
+import { useAlbums } from "../hooks/useAlbums";
 
 function Albumhomepage() {
     const [showModal, setShowModal] = useState(false);
 
-    const userId = 1;
+    const queryClient = useQueryClient();
+    const user = queryClient.getQueryData(["user"]);
+    const userId = user?.id;
 
-    const {
-        data: albums,
-        isLoading,
-        error,
-    } = useQuery({
-        queryKey: ["albums", userId],
-        queryFn: () => getUserAlmbums(userId),
-    });
+    const { data: albums, isLoading, error } = useAlbums(userId);
 
+    if (!userId) return <p>Você precisa estar logado.</p>;
+    if (isLoading) return <p>Carregando álbuns...</p>;
     if (error) return <p>Erro: {error.message}</p>;
+
     return (
         <>
             <header>
